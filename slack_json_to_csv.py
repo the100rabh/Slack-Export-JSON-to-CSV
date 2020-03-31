@@ -51,7 +51,8 @@ for content in os.listdir(jsondir):
         for item in data:
             if item["type"] == "message" :
                 if item["text"].find("> has joined the channel") == -1:
-                    user_cur = user.get(item.get("user", "Unknown User"), "Unknown User")
+                    user_cur = user.get(item.get("user", "Unknown User"), [u'Unknown User'])
+                    print(user_cur)
                     ts = datetime.utcfromtimestamp(float(item['ts']))
                     time = ts.strftime("%Y-%m-%d %H:%M:%S")
                     item["text"] = transform_text(item["text"])
