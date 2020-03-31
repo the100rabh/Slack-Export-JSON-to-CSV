@@ -30,7 +30,7 @@ outcsv_file = sys.argv[3]
 content_list = []
 userlist  = []
 f = open(outcsv_file, 'w')
-user = {};
+user = {}
 with open(userjson) as user_data:
     userlist = json.load(user_data)
     for userdata in userlist:
